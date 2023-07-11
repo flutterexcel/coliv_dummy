@@ -33,11 +33,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- final DataTableSource data = MyData(a: );
-  late ActivityListModel data1;
+  late ActivityListModel? data1;
   bool circular = true;
   var token =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1MWJiNGJkMWQwYzYxNDc2ZWIxYjcwYzNhNDdjMzE2ZDVmODkzMmIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRXVnZW5pbyBGZXJyYW50ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaWlUM2ZRRU9sdUdxdnBNQ0REZ2w5V0xrN2ltckliOTdJZmg3SkxTN0V5dkt1UTJGQ0l0RkxRUjE1R1JHUXVnN2h0Nll0d2FfWWJJRHZEd0x4eXgwbGh2RVRzT3g5NmhkOUZUV1pRTnZRRFIteHYxM3ZuZHVRMXNweGRwampwWVJGdkdhUUgwLWtVTGQteXhLeTFFaEdNdVdVZjZNa2ZjcUJzRFJSUzU0V1oyZEdWeERMUXkzem5YdmZONnQ5SGc3VXdmVlZtVU1OYXI0M1lPaDdaZWJPVFUtTDFUVzlSZjc0aEZlcU0xUFh3dE92OU5uakkyaFR2SkR1RU9SWTdGOENvUEpwVS1jNE5Kd19Qd3Zyc0tjOGpqOWNxbFRNU0lnTHU2QnFMd0NTV1ZWbkRNZFhaVFNMWVlreC01NXJXdnhiZENJXzNiM0Y3WUJxcXhDNmxmLWNzQTBVcWg1ZmdMYkpFSWhsNERGanMzVlpyc3lSVENsbGp4ZlBiRUtqNDkxUU94ZkRjbUl0QUUwT2FzRFdtSzNVYlh5M1o3U2NyT1dIVlNIOEVjX1JZbjhPZ0toT1hOTmhPUE5Ldm1NbVZnWjFIVXhadS0tNDhpem80eDExWU1rMld4eExUZGdJbDVmWHM2X0FIajdYaTBFRW1CeV9QR2p0TmxDQUJJZzBXbjgwQkdsTDBzNFJZaW9KZV9XbVo1MGRZUGZJOGZnS1B6b1N5MWhMM3A0YzZHR0tzZU1KekxSOEpXZGlUbklWZGFLMXowSGpyRl8xMkI1Vi1UN1lJeHVqQUpKQVBpbjRxNDZ4X1JLUm5lc1lVWjRzUG92cWJReXE5NXJla1FxUVcyZEo0eGFOWXpoUVRpWktRQUZBX1dQV2hPU09SMDhWa2ZEYk1TTlFNS0JJa2FCREdjUWdkUWRTUksxMkxfS2FrdHpvLWtvLTFobEcxMGlXMmdXOU5yVmo5SEdyd3dUaEkyX3lOZzN3YUljMTZfWkJsQmJGdWdCZHhNUmg3NlFsZ0gwUjJmQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb2xpdmhxLWRldiIsImF1ZCI6ImNvbGl2aHEtZGV2IiwiYXV0aF90aW1lIjoxNjg4OTc1NzA2LCJ1c2VyX2lkIjoiNWY4VXYzRGtTdlN6aTZmbHZUSTBMU3JjdTgwMiIsInN1YiI6IjVmOFV2M0RrU3ZTemk2Zmx2VEkwTFNyY3U4MDIiLCJpYXQiOjE2ODg5ODYzOTUsImV4cCI6MTY4ODk4OTk5NSwiZW1haWwiOiJldWdlbmlvQGNhc2FtaWEuY28iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzcwMDI4ODEyODA1NjM5ODAwMyJdLCJlbWFpbCI6WyJldWdlbmlvQGNhc2FtaWEuY28iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.q_ysaob1JFyszdo2-shkd-jdYT5iZzvnROZFbPxUaqIM1iRTT1wmPaRXFeLZVkzbHDqOerXrTsl7pyrkqR3n2Op91vkASAOx3061QraylVNEpPnjeh8206KItO7gHJWSW8PSMa6PnNc1QRIlIUpSOXnWc9kIOpaufsdlq7-aO3PbSk4f3suL2Q12c1YwW_Rl1KDEUCUgag8n9X3uTV-UOa5buaXGxcGDs7h98GFpvQbpgZwZhsxjLp5Q2C9niwPc6IjNM7Q1M_0wly6k7Q0OUSCe71jG2-ElUTKiP1jb5oqq1xMtrmJYiOw5Exnt2jhIvC2_-1ZgK3ZzUISfDk3cFg';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1MWJiNGJkMWQwYzYxNDc2ZWIxYjcwYzNhNDdjMzE2ZDVmODkzMmIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRXVnZW5pbyBGZXJyYW50ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaWlUM2ZRRU9sdUdxdnBNQ0REZ2w5V0xrN2ltckliOTdJZmg3SkxTN0V5dkt1UTJGQ0l0RkxRUjE1R1JHUXVnN2h0Nll0d2FfWWJJRHZEd0x4eXgwbGh2RVRzT3g5NmhkOUZUV1pRTnZRRFIteHYxM3ZuZHVRMXNweGRwampwWVJGdkdhUUgwLWtVTGQteXhLeTFFaEdNdVdVZjZNa2ZjcUJzRFJSUzU0V1oyZEdWeERMUXkzem5YdmZONnQ5SGc3VXdmVlZtVU1OYXI0M1lPaDdaZWJPVFUtTDFUVzlSZjc0aEZlcU0xUFh3dE92OU5uakkyaFR2SkR1RU9SWTdGOENvUEpwVS1jNE5Kd19Qd3Zyc0tjOGpqOWNxbFRNU0lnTHU2QnFMd0NTV1ZWbkRNZFhaVFNMWVlreC01NXJXdnhiZENJXzNiM0Y3WUJxcXhDNmxmLWNzQTBVcWg1ZmdMYkpFSWhsNERGanMzVlpyc3lSVENsbGp4ZlBiRUtqNDkxUU94ZkRjbUl0QUUwT2FzRFdtSzNVYlh5M1o3U2NyT1dIVlNIOEVjX1JZbjhPZ0toT1hOTmhPUE5Ldm1NbVZnWjFIVXhadS0tNDhpem80eDExWU1rMld4eExUZGdJbDVmWHM2X0FIajdYaTBFRW1CeV9QR2p0TmxDQUJJZzBXbjgwQkdsTDBzNFJZaW9KZV9XbVo1MGRZUGZJOGZnS1B6b1N5MWhMM3A0YzZHR0tzZU1KekxSOEpXZGlUbklWZGFLMXowSGpyRl8xMkI1Vi1UN1lJeHVqQUpKQVBpbjRxNDZ4X1JLUm5lc1lVWjRzUG92cWJReXE5NXJla1FxUVcyZEo0eGFOWXpoUVRpWktRQUZBX1dQV2hPU09SMDhWa2ZEYk1TTlFNS0JJa2FCREdjUWdkUWRTUksxMkxfS2FrdHpvLWtvLTFobEcxMGlXMmdXOU5yVmo5SEdyd3dUaEkyX3lOZzN3YUljMTZfWkJsQmJGdWdCZHhNUmg3NlFsZ0gwUjJmQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb2xpdmhxLWRldiIsImF1ZCI6ImNvbGl2aHEtZGV2IiwiYXV0aF90aW1lIjoxNjg4NzA5Njg2LCJ1c2VyX2lkIjoiNWY4VXYzRGtTdlN6aTZmbHZUSTBMU3JjdTgwMiIsInN1YiI6IjVmOFV2M0RrU3ZTemk2Zmx2VEkwTFNyY3U4MDIiLCJpYXQiOjE2ODkwNzE5MjUsImV4cCI6MTY4OTA3NTUyNSwiZW1haWwiOiJldWdlbmlvQGNhc2FtaWEuY28iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzcwMDI4ODEyODA1NjM5ODAwMyJdLCJlbWFpbCI6WyJldWdlbmlvQGNhc2FtaWEuY28iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.cEXzIZtCiAhojP3xfUnoIVvpTLWTO9Hhg-WEuVWj1jQAZpWpkPjAxJHU3-75pPNGUdBL7Pc5E3gl0XfuIaoVsuJhwAedmqd58Etjh80ojX2o2iP1Gb6Kt1w187vZ0jaMgYetvsK3t3gJ_reF8F7DuRvTHmTMgdKcT5-3qw1W7U7UR8yqX9AStia65fWxtOeKupsGn4VkxF0nTTI3A4q04DK6qTr2n88iCzNgsCnjwQ_cXPE6zjs0FBrdRgHysuC-oAktikpmCAuOc7rJmk0pcilnOFhXQCkEVOgrgrpnGxcyPzPP3gNttWujeQpYO9cibbPRKmMV-5e-wlSVS1UHNQ';
+
 // method for post data
   postData() async {
     try {
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
             "Access-Control-Allow-Headers":
                 "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
             "Access-Control-Allow-Methods": "POST, OPTIONS",
-            'Authori zation': 'Bearer $token'
+            'Authorization': 'Bearer $token'
           });
       print(response.body);
       setState(() {
@@ -78,9 +78,14 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  void initState() {
+    super.initState();
+    postData();
+    print('post data called');
+  }
+
   @override
   Widget build(BuildContext context) {
-    postData();
     return Scaffold(
         appBar: AppBar(
           //shadowColor: Color(000000),
@@ -329,150 +334,181 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               width: 50,
             ),
-            Column()
-             children: [
-              PaginatedDataTable(
-                  header: Center(
-                    child: Text("My Randomly Generated Table"),
-                  ),
-                  columnSpacing: 250,
-                  horizontalMargin: 60,
-                  rowsPerPage: 7,
-                  columns: const [
-                    DataColumn(label: Text('ID')),
-                    DataColumn(label: Text('Name')),
-                    DataColumn(label: Text('Price')),
-                  ],
-                  source: data)
-            // ],
-            // SingleChildScrollView(
-            //   child: Container(
-            //     // height: MediaQuery.of(context).size.height,
-            //     width: MediaQuery.of(context).size.width - 360,
-            //     child: Column(children: [
-            //       SingleChildScrollView(
-            //         child: Center(
-            //           child: circular
-            //               ? CircularProgressIndicator()
-            //               : ListView.builder(
-            //                   itemCount: data1.data.length,
-            //                   shrinkWrap: true,
-            //                   itemBuilder: (BuildContext context, index) {
-            //                     return Container(
-            //                       height: 100,
-            //                       margin: EdgeInsets.all(3),
-            //                       decoration: const BoxDecoration(
-            //                         //borderRadius:  BorderRadius.all(10),
-            //                         boxShadow: [
-            //                           BoxShadow(
-            //                             color: Colors.black,
-            //                             offset: Offset(
-            //                               5.0,
-            //                               5.0,
-            //                             ), //Offset
-            //                             blurRadius: 10.0,
-            //                             spreadRadius: 2.0,
-            //                           ), //BoxShadow
-            //                           BoxShadow(
-            //                             color: Colors.white,
-            //                             offset: Offset(0.0, 0.0),
-            //                             blurRadius: 0.0,
-            //                             spreadRadius: 0.0,
-            //                           ), //BoxShadow
-            //                         ],
-            //                       ),
-            //                       width: MediaQuery.sizeOf(context).width,
-            //                       child: Container(
-            //                         width: 100,
-            //                         child: ListTile(
-            //                           leading: CircleAvatar(
-            //                               backgroundImage: NetworkImage(data1
-            //                                   .data[index].todoOwnerPicture)),
-            //                           title: Container(
-            //                               width: 30,
-            //                               child: Text(
-            //                                 data1.data[index].homeId == null
-            //                                     ? ""
-            //                                     : data1.data[index].homeId,
-            //                                 maxLines: 1,
-            //                               )),
-            //                           subtitle: Container(
-            //                               width: 30,
-            //                               child: Text(
-            //                                 data1.data[index].activityType ==
-            //                                         null
-            //                                     ? ''
-            //                                     : data1
-            //                                         .data[index].activityType,
-            //                                 maxLines: 1,
-            //                               )),
-            //                           trailing: Container(
-            //                             height: 200,
-            //                             child: Column(
-            //                               children: [
-            //                                 Container(
-            //                                     // width: 120,
-            //                                     child: Text(
-            //                                   data1.data[index].email == null
-            //                                       ? ''
-            //                                       : data1.data[index].email,
-            //                                   overflow: TextOverflow.ellipsis,
-            //                                   softWrap: false,
-            //                                   maxLines: 1,
-            //                                 )),
-            //                                 Container(
-            //                                   height: 19,
-            //                                   // width: 120,
-            //                                   child: Text(
-            //                                     data1.data[index].createdDate ==
-            //                                             null
-            //                                         ? ' '
-            //                                         : data1.data[index]
-            //                                             .createdDate,
-            //                                     overflow: TextOverflow.ellipsis,
-            //                                     softWrap: false,
-            //                                     maxLines: 1,
-            //                                   ),
-            //                                 )
-            //                               ],
-            //                             ),
-            //                           ),
-            //                         ),
-            //                       ),
-            //                     );
-            //                   }),
-            //         ),
-            //       ),
-            //     ]
-                   
-            //         ),
-            //   ),
-            // )
+            Container(
+              width: 800,
+              child: SingleChildScrollView(
+                child: circular
+                    ? CircularProgressIndicator()
+                    : Column(
+                        children: [
+                          PaginatedDataTable(
+                              header: Center(
+                                child: Text("My Randomly Generated Table"),
+                              ),
+                              columnSpacing: 150,
+                              horizontalMargin: 60,
+                              rowsPerPage: 5,
+                              columns: [
+                                DataColumn(label: Text('DATE')),
+                                DataColumn(label: Text('Name')),
+                                DataColumn(label: Text('Price')),
+                                DataColumn(label: Text('DATE')),
+                                DataColumn(label: Text('Name')),
+                                DataColumn(label: Text('Price')),
+                              ],
+                              source: MyData(a: data1!))
+                          // ],
+                          // SingleChildScrollView(
+                          //   child: Container(
+                          //     // height: MediaQuery.of(context).size.height,
+                          //     width: MediaQuery.of(context).size.width - 360,
+                          //     child: Column(children: [
+                          //       SingleChildScrollView(
+                          //         child: Center(
+                          //           child: circular
+                          //               ? CircularProgressIndicator()
+                          //               : ListView.builder(
+                          //                   itemCount: data1.data.length,
+                          //                   shrinkWrap: true,
+                          //                   itemBuilder: (BuildContext context, index) {
+                          //                     return Container(
+                          //                       height: 100,
+                          //                       margin: EdgeInsets.all(3),
+                          //                       decoration: const BoxDecoration(
+                          //                         //borderRadius:  BorderRadius.all(10),
+                          //                         boxShadow: [
+                          //                           BoxShadow(
+                          //                             color: Colors.black,
+                          //                             offset: Offset(
+                          //                               5.0,
+                          //                               5.0,
+                          //                             ), //Offset
+                          //                             blurRadius: 10.0,
+                          //                             spreadRadius: 2.0,
+                          //                           ), //BoxShadow
+                          //                           BoxShadow(
+                          //                             color: Colors.white,
+                          //                             offset: Offset(0.0, 0.0),
+                          //                             blurRadius: 0.0,
+                          //                             spreadRadius: 0.0,
+                          //                           ), //BoxShadow
+                          //                         ],
+                          //                       ),
+                          //                       width: MediaQuery.sizeOf(context).width,
+                          //                       child: Container(
+                          //                         width: 100,
+                          //                         child: ListTile(
+                          //                           leading: CircleAvatar(
+                          //                               backgroundImage: NetworkImage(data1
+                          //                                   .data[index].todoOwnerPicture)),
+                          //                           title: Container(
+                          //                               width: 30,
+                          //                               child: Text(
+                          //                                 data1.data[index].homeId == null
+                          //                                     ? ""
+                          //                                     : data1.data[index].homeId,
+                          //                                 maxLines: 1,
+                          //                               )),
+                          //                           subtitle: Container(
+                          //                               width: 30,
+                          //                               child: Text(
+                          //                                 data1.data[index].activityType ==
+                          //                                         null
+                          //                                     ? ''
+                          //                                     : data1
+                          //                                         .data[index].activityType,
+                          //                                 maxLines: 1,
+                          //                               )),
+                          //                           trailing: Container(
+                          //                             height: 200,
+                          //                             child: Column(
+                          //                               children: [
+                          //                                 Container(
+                          //                                     // width: 120,
+                          //                                     child: Text(
+                          //                                   data1.data[index].email == null
+                          //                                       ? ''
+                          //                                       : data1.data[index].email,
+                          //                                   overflow: TextOverflow.ellipsis,
+                          //                                   softWrap: false,
+                          //                                   maxLines: 1,
+                          //                                 )),
+                          //                                 Container(
+                          //                                   height: 19,
+                          //                                   // width: 120,
+                          //                                   child: Text(
+                          //                                     data1.data[index].createdDate ==
+                          //                                             null
+                          //                                         ? ' '
+                          //                                         : data1.data[index]
+                          //                                             .createdDate,
+                          //                                     overflow: TextOverflow.ellipsis,
+                          //                                     softWrap: false,
+                          //                                     maxLines: 1,
+                          //                                   ),
+                          //                                 )
+                          //                               ],
+                          //                             ),
+                          //                           ),
+                          //                         ),
+                          //                       ),
+                          //                     );
+                          //                   }),
+                          //         ),
+                          //       ),
+                          //     ]
+
+                          //         ),
+                          //   ),
+                          // )
+                        ],
+                      ),
+              ),
+            )
+            // This trailing comma makes auto-formatting nicer for build methods.
           ],
-        )
-        // This trailing comma makes auto-formatting nicer for build methods.
-        );
+        ));
   }
-  
 }
 
 class MyData extends DataTableSource {
-  var a;
-  MyData({this.a});
-  final List<Map<String, dynamic>> data = List.generate(
-      10,
-      (index) => {
-            "id": index,
-            "title": "Item $index",
-            "price": Random().nextInt(10000)
-          });
+  ActivityListModel a;
+  late List<Map<String, dynamic>> data;
+  MyData({required this.a}) {
+    data = List.generate(
+        a.data.length,
+        (index) => {
+              "todo-date":
+                  a.data[index].todoDate == null ? ' ' : a.data[index].todoDate,
+              "activity-type": a.data[index].activityType == null
+                  ? ' '
+                  : a.data[index].activityType,
+              "activity-description": a.data[index].activityDescription == null
+                  ? ' '
+                  : a.data[index].activityDescription,
+              "owner-image": a.data[index].todoOwnerPicture == null
+                  ? ' '
+                  : a.data[index].todoOwnerPicture,
+              "check-box": '',
+              "pop-up-menu-button": ''
+            });
+  }
 
   @override
   DataRow? getRow(int index) {
     return DataRow(cells: [
-      DataCell(Text(data[index]['id'].toString())),
-      DataCell(Text(data[index]['title'])),
-      DataCell(Text(data[index]['price'].toString()))
+      DataCell(Text(data[index]['todo-date'].toString())),
+      DataCell(Text(data[index]['activity-type'])),
+      DataCell(Text(data[index]['activity-description'].toString())),
+      DataCell(CircleAvatar(
+        backgroundImage: NetworkImage(data[index]['owner-image']))),
+      DataCell(Checkbox(value: true,onChanged:(value) =>  {})),
+      DataCell(PopupMenuButton(itemBuilder: (context) => {
+        
+      },))
+     ,
+    
+      
     ]);
   }
 
