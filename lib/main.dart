@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_colivhq_dummy/model.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late ActivityListModel? data1;
   bool circular = true;
   var token =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1MWJiNGJkMWQwYzYxNDc2ZWIxYjcwYzNhNDdjMzE2ZDVmODkzMmIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRXVnZW5pbyBGZXJyYW50ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaWlUM2ZRRU9sdUdxdnBNQ0REZ2w5V0xrN2ltckliOTdJZmg3SkxTN0V5dkt1UTJGQ0l0RkxRUjE1R1JHUXVnN2h0Nll0d2FfWWJJRHZEd0x4eXgwbGh2RVRzT3g5NmhkOUZUV1pRTnZRRFIteHYxM3ZuZHVRMXNweGRwampwWVJGdkdhUUgwLWtVTGQteXhLeTFFaEdNdVdVZjZNa2ZjcUJzRFJSUzU0V1oyZEdWeERMUXkzem5YdmZONnQ5SGc3VXdmVlZtVU1OYXI0M1lPaDdaZWJPVFUtTDFUVzlSZjc0aEZlcU0xUFh3dE92OU5uakkyaFR2SkR1RU9SWTdGOENvUEpwVS1jNE5Kd19Qd3Zyc0tjOGpqOWNxbFRNU0lnTHU2QnFMd0NTV1ZWbkRNZFhaVFNMWVlreC01NXJXdnhiZENJXzNiM0Y3WUJxcXhDNmxmLWNzQTBVcWg1ZmdMYkpFSWhsNERGanMzVlpyc3lSVENsbGp4ZlBiRUtqNDkxUU94ZkRjbUl0QUUwT2FzRFdtSzNVYlh5M1o3U2NyT1dIVlNIOEVjX1JZbjhPZ0toT1hOTmhPUE5Ldm1NbVZnWjFIVXhadS0tNDhpem80eDExWU1rMld4eExUZGdJbDVmWHM2X0FIajdYaTBFRW1CeV9QR2p0TmxDQUJJZzBXbjgwQkdsTDBzNFJZaW9KZV9XbVo1MGRZUGZJOGZnS1B6b1N5MWhMM3A0YzZHR0tzZU1KekxSOEpXZGlUbklWZGFLMXowSGpyRl8xMkI1Vi1UN1lJeHVqQUpKQVBpbjRxNDZ4X1JLUm5lc1lVWjRzUG92cWJReXE5NXJla1FxUVcyZEo0eGFOWXpoUVRpWktRQUZBX1dQV2hPU09SMDhWa2ZEYk1TTlFNS0JJa2FCREdjUWdkUWRTUksxMkxfS2FrdHpvLWtvLTFobEcxMGlXMmdXOU5yVmo5SEdyd3dUaEkyX3lOZzN3YUljMTZfWkJsQmJGdWdCZHhNUmg3NlFsZ0gwUjJmQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb2xpdmhxLWRldiIsImF1ZCI6ImNvbGl2aHEtZGV2IiwiYXV0aF90aW1lIjoxNjg4NzA5Njg2LCJ1c2VyX2lkIjoiNWY4VXYzRGtTdlN6aTZmbHZUSTBMU3JjdTgwMiIsInN1YiI6IjVmOFV2M0RrU3ZTemk2Zmx2VEkwTFNyY3U4MDIiLCJpYXQiOjE2ODkwNzE5MjUsImV4cCI6MTY4OTA3NTUyNSwiZW1haWwiOiJldWdlbmlvQGNhc2FtaWEuY28iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzcwMDI4ODEyODA1NjM5ODAwMyJdLCJlbWFpbCI6WyJldWdlbmlvQGNhc2FtaWEuY28iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.cEXzIZtCiAhojP3xfUnoIVvpTLWTO9Hhg-WEuVWj1jQAZpWpkPjAxJHU3-75pPNGUdBL7Pc5E3gl0XfuIaoVsuJhwAedmqd58Etjh80ojX2o2iP1Gb6Kt1w187vZ0jaMgYetvsK3t3gJ_reF8F7DuRvTHmTMgdKcT5-3qw1W7U7UR8yqX9AStia65fWxtOeKupsGn4VkxF0nTTI3A4q04DK6qTr2n88iCzNgsCnjwQ_cXPE6zjs0FBrdRgHysuC-oAktikpmCAuOc7rJmk0pcilnOFhXQCkEVOgrgrpnGxcyPzPP3gNttWujeQpYO9cibbPRKmMV-5e-wlSVS1UHNQ';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1MWJiNGJkMWQwYzYxNDc2ZWIxYjcwYzNhNDdjMzE2ZDVmODkzMmIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRXVnZW5pbyBGZXJyYW50ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaWlUM2ZRRU9sdUdxdnBNQ0REZ2w5V0xrN2ltckliOTdJZmg3SkxTN0V5dkt1UTJGQ0l0RkxRUjE1R1JHUXVnN2h0Nll0d2FfWWJJRHZEd0x4eXgwbGh2RVRzT3g5NmhkOUZUV1pRTnZRRFIteHYxM3ZuZHVRMXNweGRwampwWVJGdkdhUUgwLWtVTGQteXhLeTFFaEdNdVdVZjZNa2ZjcUJzRFJSUzU0V1oyZEdWeERMUXkzem5YdmZONnQ5SGc3VXdmVlZtVU1OYXI0M1lPaDdaZWJPVFUtTDFUVzlSZjc0aEZlcU0xUFh3dE92OU5uakkyaFR2SkR1RU9SWTdGOENvUEpwVS1jNE5Kd19Qd3Zyc0tjOGpqOWNxbFRNU0lnTHU2QnFMd0NTV1ZWbkRNZFhaVFNMWVlreC01NXJXdnhiZENJXzNiM0Y3WUJxcXhDNmxmLWNzQTBVcWg1ZmdMYkpFSWhsNERGanMzVlpyc3lSVENsbGp4ZlBiRUtqNDkxUU94ZkRjbUl0QUUwT2FzRFdtSzNVYlh5M1o3U2NyT1dIVlNIOEVjX1JZbjhPZ0toT1hOTmhPUE5Ldm1NbVZnWjFIVXhadS0tNDhpem80eDExWU1rMld4eExUZGdJbDVmWHM2X0FIajdYaTBFRW1CeV9QR2p0TmxDQUJJZzBXbjgwQkdsTDBzNFJZaW9KZV9XbVo1MGRZUGZJOGZnS1B6b1N5MWhMM3A0YzZHR0tzZU1KekxSOEpXZGlUbklWZGFLMXowSGpyRl8xMkI1Vi1UN1lJeHVqQUpKQVBpbjRxNDZ4X1JLUm5lc1lVWjRzUG92cWJReXE5NXJla1FxUVcyZEo0eGFOWXpoUVRpWktRQUZBX1dQV2hPU09SMDhWa2ZEYk1TTlFNS0JJa2FCREdjUWdkUWRTUksxMkxfS2FrdHpvLWtvLTFobEcxMGlXMmdXOU5yVmo5SEdyd3dUaEkyX3lOZzN3YUljMTZfWkJsQmJGdWdCZHhNUmg3NlFsZ0gwUjJmQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb2xpdmhxLWRldiIsImF1ZCI6ImNvbGl2aHEtZGV2IiwiYXV0aF90aW1lIjoxNjg5MDczMDk0LCJ1c2VyX2lkIjoiNWY4VXYzRGtTdlN6aTZmbHZUSTBMU3JjdTgwMiIsInN1YiI6IjVmOFV2M0RrU3ZTemk2Zmx2VEkwTFNyY3U4MDIiLCJpYXQiOjE2ODkxNjYzMTgsImV4cCI6MTY4OTE2OTkxOCwiZW1haWwiOiJldWdlbmlvQGNhc2FtaWEuY28iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzcwMDI4ODEyODA1NjM5ODAwMyJdLCJlbWFpbCI6WyJldWdlbmlvQGNhc2FtaWEuY28iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.r3SK3xSHhIgAKXBxBpC-QnqBwF2nBkYBFzp4q6b1gMaK-pT8A8gGpMAVAtR6_Vk3AZDFbAHAgRCaO0gkzCs8v3ZAummmefseV25ywnmusoUo6lTrzBB0XOVMzF7xhDMNCJJqiADRM_BNdabmEZAJIwHv7t1dAzBwAIBWXG1YUUbSlORsuD9KExqqExsl8QEcT0gclSRfURT4AqxiZq5EP5Jyj8dRB-JvP_mLGsy3RNIL5pN8efxMRbVYZWgZS2GX9_guoi9RtB_tkKypKIUiKPsNFEm29CxGNM9Tli3wRZ9mKBTBjXKyM35wiBlD_20DkrXD_8XJDVHg4c7lNi53tg';
 
 // method for post data
   postData() async {
@@ -345,16 +346,17 @@ class _MyHomePageState extends State<MyHomePage> {
                               header: Center(
                                 child: Text("My Randomly Generated Table"),
                               ),
-                              columnSpacing: 150,
+                              columnSpacing: 15,
                               horizontalMargin: 60,
                               rowsPerPage: 5,
                               columns: [
                                 DataColumn(label: Text('DATE')),
-                                DataColumn(label: Text('Name')),
-                                DataColumn(label: Text('Price')),
-                                DataColumn(label: Text('DATE')),
-                                DataColumn(label: Text('Name')),
-                                DataColumn(label: Text('Price')),
+                                DataColumn(label: Text('MEMBERS ')),
+                                DataColumn(label: Text('ACTIVITY TYPE ')),
+                                DataColumn(label: Text('ACTIVITY DESCRIPTION')),
+                                DataColumn(label: Text('IMAGE')),
+                                DataColumn(label: Text('CHECKBOX')),
+                                DataColumn(label: Text('POPUP-MENU')),
                               ],
                               source: MyData(a: data1!))
                           // ],
@@ -471,15 +473,28 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+enum SampleItem { itemOne, itemTwo, itemThree }
+
 class MyData extends DataTableSource {
+  bool isChecked = false;
   ActivityListModel a;
   late List<Map<String, dynamic>> data;
   MyData({required this.a}) {
     data = List.generate(
         a.data.length,
         (index) => {
-              "todo-date":
-                  a.data[index].todoDate == null ? ' ' : a.data[index].todoDate,
+              "todo-date": a.data[index].todoDate == null
+                  ? ' '
+                  : DateFormat('MMM dd,yyyy')
+                      .format(DateTime.parse(a.data[index].todoDate)),
+              "todo-time": a.data[index].todoDate == null
+                  ? ' '
+                  : DateFormat('hh:mm a')
+                      .format(DateTime.parse(a.data[index].todoDate)),
+              "name": a.data[index].members.isEmpty ||
+                      a.data[index].members == null
+                  ? ' '
+                  : '${a.data[index].members[0].preferredName} ${a.data[index].members[0].memberFirst} ${a.data[index].members[0].memberFirst}',
               "activity-type": a.data[index].activityType == null
                   ? ' '
                   : a.data[index].activityType,
@@ -493,22 +508,34 @@ class MyData extends DataTableSource {
               "pop-up-menu-button": ''
             });
   }
-
+  SampleItem? selectedMenu;
   @override
   DataRow? getRow(int index) {
     return DataRow(cells: [
-      DataCell(Text(data[index]['todo-date'].toString())),
+      DataCell(Column(
+        children: [
+          Text(data[index]['todo-date'].toString()),
+          Text(data[index]['todo-time'].toString())
+        ],
+      )),
+      DataCell(Text(data[index]['name'])),
       DataCell(Text(data[index]['activity-type'])),
       DataCell(Text(data[index]['activity-description'].toString())),
       DataCell(CircleAvatar(
-        backgroundImage: NetworkImage(data[index]['owner-image']))),
-      DataCell(Checkbox(value: true,onChanged:(value) =>  {})),
-      DataCell(PopupMenuButton(itemBuilder: (context) => {
-        
-      },))
-     ,
-    
-      
+          backgroundImage: NetworkImage(data[index]['owner-image']))),
+      DataCell(Checkbox(value: isChecked, onChanged: (value) => {})),
+      DataCell(PopupMenuButton<SampleItem>(
+        initialValue: selectedMenu,
+        onSelected: (SampleItem item) {},
+        itemBuilder: (BuildContext context) {
+          return <PopupMenuEntry<SampleItem>>[
+            const PopupMenuItem<SampleItem>(
+              value: SampleItem.itemOne,
+              child: Text('Item 1'),
+            ),
+          ];
+        },
+      ))
     ]);
   }
 
