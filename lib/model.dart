@@ -48,20 +48,20 @@ class ActivityListModel {
 }
 
 class Datum {
-  String id;
+  String? id;
   String? opportunityId;
   String? issueId;
-  String homeId;
+  String? homeId;
   String? roomId;
   dynamic bedId;
   dynamic activityId;
-  String activityType;
-  String activityDescription;
-  bool todo;
-  bool completed;
-  String todoOwner;
-  String todoDate;
-  bool meeting;
+  String? activityType;
+  String? activityDescription;
+  bool? todo;
+  bool? completed;
+  String? todoOwner;
+  String? todoDate;
+  bool? meeting;
   String? meetingDate;
   dynamic meetingLocation;
   dynamic vendorId;
@@ -71,13 +71,13 @@ class Datum {
   dynamic to;
   dynamic subject;
   dynamic body;
-  bool recurring;
+  bool? recurring;
   dynamic frequency;
   dynamic startDate;
   dynamic endDate;
-  String createdDate;
-  String operatorId;
-  String createdBy;
+  String? createdDate;
+  String? operatorId;
+  String? createdBy;
   dynamic messageId;
   dynamic emailTrackingId;
   dynamic useCommunity;
@@ -92,10 +92,10 @@ class Datum {
   String? reProposalId;
   String? referenceId;
   String? referenceType;
-  String homeName;
-  String todoOwnerName;
-  String todoOwnerPicture;
-  String createdByName;
+  String? homeName;
+  String? todoOwnerName;
+  String? todoOwnerPicture;
+  String? createdByName;
   List<Member> members;
   String? roomName;
 
@@ -261,15 +261,15 @@ class Datum {
 }
 
 class Member {
-  String memberEmail;
-  String memberFirst;
-  String memberLast;
-  String memberPhone;
-  String memberWhatsapp;
-  String memberId;
-  String preferredName;
-  String memberType;
-  String type;
+  String? memberEmail;
+  String? memberFirst;
+  String? memberLast;
+  String? memberPhone;
+  String? memberWhatsapp;
+  String? memberId;
+  String? preferredName;
+  String? memberType;
+  String? type;
 
   Member({
     required this.memberEmail,
