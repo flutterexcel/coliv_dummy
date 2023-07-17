@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
         useMaterial3: true,
       ),
-      home: MyPopUpPage(),
-      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      //  home: MyPopUpPage(),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late ActivityListModel? data1;
   bool circular = true;
   var token =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1MWJiNGJkMWQwYzYxNDc2ZWIxYjcwYzNhNDdjMzE2ZDVmODkzMmIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRXVnZW5pbyBGZXJyYW50ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaWlUM2ZRRU9sdUdxdnBNQ0REZ2w5V0xrN2ltckliOTdJZmg3SkxTN0V5dkt1UTJGQ0l0RkxRUjE1R1JHUXVnN2h0Nll0d2FfWWJJRHZEd0x4eXgwbGh2RVRzT3g5NmhkOUZUV1pRTnZRRFIteHYxM3ZuZHVRMXNweGRwampwWVJGdkdhUUgwLWtVTGQteXhLeTFFaEdNdVdVZjZNa2ZjcUJzRFJSUzU0V1oyZEdWeERMUXkzem5YdmZONnQ5SGc3VXdmVlZtVU1OYXI0M1lPaDdaZWJPVFUtTDFUVzlSZjc0aEZlcU0xUFh3dE92OU5uakkyaFR2SkR1RU9SWTdGOENvUEpwVS1jNE5Kd19Qd3Zyc0tjOGpqOWNxbFRNU0lnTHU2QnFMd0NTV1ZWbkRNZFhaVFNMWVlreC01NXJXdnhiZENJXzNiM0Y3WUJxcXhDNmxmLWNzQTBVcWg1ZmdMYkpFSWhsNERGanMzVlpyc3lSVENsbGp4ZlBiRUtqNDkxUU94ZkRjbUl0QUUwT2FzRFdtSzNVYlh5M1o3U2NyT1dIVlNIOEVjX1JZbjhPZ0toT1hOTmhPUE5Ldm1NbVZnWjFIVXhadS0tNDhpem80eDExWU1rMld4eExUZGdJbDVmWHM2X0FIajdYaTBFRW1CeV9QR2p0TmxDQUJJZzBXbjgwQkdsTDBzNFJZaW9KZV9XbVo1MGRZUGZJOGZnS1B6b1N5MWhMM3A0YzZHR0tzZU1KekxSOEpXZGlUbklWZGFLMXowSGpyRl8xMkI1Vi1UN1lJeHVqQUpKQVBpbjRxNDZ4X1JLUm5lc1lVWjRzUG92cWJReXE5NXJla1FxUVcyZEo0eGFOWXpoUVRpWktRQUZBX1dQV2hPU09SMDhWa2ZEYk1TTlFNS0JJa2FCREdjUWdkUWRTUksxMkxfS2FrdHpvLWtvLTFobEcxMGlXMmdXOU5yVmo5SEdyd3dUaEkyX3lOZzN3YUljMTZfWkJsQmJGdWdCZHhNUmg3NlFsZ0gwUjJmQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb2xpdmhxLWRldiIsImF1ZCI6ImNvbGl2aHEtZGV2IiwiYXV0aF90aW1lIjoxNjg5MDczMDk0LCJ1c2VyX2lkIjoiNWY4VXYzRGtTdlN6aTZmbHZUSTBMU3JjdTgwMiIsInN1YiI6IjVmOFV2M0RrU3ZTemk2Zmx2VEkwTFNyY3U4MDIiLCJpYXQiOjE2ODkzMTU0MjcsImV4cCI6MTY4OTMxOTAyNywiZW1haWwiOiJldWdlbmlvQGNhc2FtaWEuY28iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzcwMDI4ODEyODA1NjM5ODAwMyJdLCJlbWFpbCI6WyJldWdlbmlvQGNhc2FtaWEuY28iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.GBiB_niHPCUTZb7jqIQQMuLHdkEKgnj_7-rfYKXOpHdPJafusrZMCplGkOfT9NZt7CIPI7Gvson5qGhvrkaww0rQBtGi3pbcD4U1N45uDXWYRtCwn3Z1UrUks74aUmuR97JfDZ_IfkyNiv5lS4YdljU4OlPT-C7icXM8I8_uGkbiZ9SC3opB-ZVEzjgF9-wN9PyX9ZKizMiOfT6IyuQsudMTO2GzlMDYwlOtKkKDHwn46LWHPeB7z0nm2FBZBzkKj8kecsGbsj9VqeVMMO_5Sb6g3VgCllFz5Ys1VKKw2eqjv7irlncZc74if9WoX-7sk_lU6mYaxGbOvbiNDxRWsg';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE0ZWI4YTNiNjgzN2Y2MTU4ZWViNjA3NmU2YThjNDI4YTVmNjJhN2IiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRXVnZW5pbyBGZXJyYW50ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaWlUM2ZRRU9sdUdxdnBNQ0REZ2w5V0xrN2ltckliOTdJZmg3SkxTN0V5dkt1UTJGQ0l0RkxRUjE1R1JHUXVnN2h0Nll0d2FfWWJJRHZEd0x4eXgwbGh2RVRzT3g5NmhkOUZUV1pRTnZRRFIteHYxM3ZuZHVRMXNweGRwampwWVJGdkdhUUgwLWtVTGQteXhLeTFFaEdNdVdVZjZNa2ZjcUJzRFJSUzU0V1oyZEdWeERMUXkzem5YdmZONnQ5SGc3VXdmVlZtVU1OYXI0M1lPaDdaZWJPVFUtTDFUVzlSZjc0aEZlcU0xUFh3dE92OU5uakkyaFR2SkR1RU9SWTdGOENvUEpwVS1jNE5Kd19Qd3Zyc0tjOGpqOWNxbFRNU0lnTHU2QnFMd0NTV1ZWbkRNZFhaVFNMWVlreC01NXJXdnhiZENJXzNiM0Y3WUJxcXhDNmxmLWNzQTBVcWg1ZmdMYkpFSWhsNERGanMzVlpyc3lSVENsbGp4ZlBiRUtqNDkxUU94ZkRjbUl0QUUwT2FzRFdtSzNVYlh5M1o3U2NyT1dIVlNIOEVjX1JZbjhPZ0toT1hOTmhPUE5Ldm1NbVZnWjFIVXhadS0tNDhpem80eDExWU1rMld4eExUZGdJbDVmWHM2X0FIajdYaTBFRW1CeV9QR2p0TmxDQUJJZzBXbjgwQkdsTDBzNFJZaW9KZV9XbVo1MGRZUGZJOGZnS1B6b1N5MWhMM3A0YzZHR0tzZU1KekxSOEpXZGlUbklWZGFLMXowSGpyRl8xMkI1Vi1UN1lJeHVqQUpKQVBpbjRxNDZ4X1JLUm5lc1lVWjRzUG92cWJReXE5NXJla1FxUVcyZEo0eGFOWXpoUVRpWktRQUZBX1dQV2hPU09SMDhWa2ZEYk1TTlFNS0JJa2FCREdjUWdkUWRTUksxMkxfS2FrdHpvLWtvLTFobEcxMGlXMmdXOU5yVmo5SEdyd3dUaEkyX3lOZzN3YUljMTZfWkJsQmJGdWdCZHhNUmg3NlFsZ0gwUjJmQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb2xpdmhxLWRldiIsImF1ZCI6ImNvbGl2aHEtZGV2IiwiYXV0aF90aW1lIjoxNjg5MDczMDk0LCJ1c2VyX2lkIjoiNWY4VXYzRGtTdlN6aTZmbHZUSTBMU3JjdTgwMiIsInN1YiI6IjVmOFV2M0RrU3ZTemk2Zmx2VEkwTFNyY3U4MDIiLCJpYXQiOjE2ODk1OTYzMjksImV4cCI6MTY4OTU5OTkyOSwiZW1haWwiOiJldWdlbmlvQGNhc2FtaWEuY28iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzcwMDI4ODEyODA1NjM5ODAwMyJdLCJlbWFpbCI6WyJldWdlbmlvQGNhc2FtaWEuY28iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.ef4c9ggX-hK3bMmJ3jyUSgvd7kn9ZglLu9fkPAwSaSn2d6imje5PKTXSNkbv9RTowhSoQx7TmdzuqiXiPyKcLjDVCmiKRjXffNXSmuye2TNaGwL7EZnS_oEslU2zcczvInoIlYitAS9-jIGnqZD1ddSF9Xy2mRHiZjljae-l1t_HkY0uIo1AsXUXy0Pk7uX1Re8bXc5Ss2KINfobWNofqJ0JQ76Pdic9D9opzETfbY5pWdHgVp5OsoTZcEnlcnIDp68WMFyqqW0bQyo6BCmQjfIaqF33MFVB7ysFYELM77_xRnOsUiDmcoCd8KGerKt6QEO5m1fxd7n-Y8P8R6OcCA';
 
 // method for post data
   postData() async {
@@ -344,23 +344,33 @@ class _MyHomePageState extends State<MyHomePage> {
                     ? CircularProgressIndicator()
                     : Column(
                         children: [
-                          PaginatedDataTable(
-                              header: Center(
-                                child: Text("My Randomly Generated Table"),
-                              ),
-                              columnSpacing: 15,
-                              horizontalMargin: 60,
-                              rowsPerPage: 5,
-                              columns: [
-                                DataColumn(label: Text('DATE')),
-                                DataColumn(label: Text('MEMBERS ')),
-                                DataColumn(label: Text('ACTIVITY TYPE ')),
-                                DataColumn(label: Text('ACTIVITY DESCRIPTION')),
-                                DataColumn(label: Text('IMAGE')),
-                                DataColumn(label: Text('CHECKBOX')),
-                                DataColumn(label: Text('POPUP-MENU')),
-                              ],
-                              source: MyData(a: data1!))
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MyPopUpPage()),
+                              );
+                            },
+                            child: PaginatedDataTable(
+                                header: Center(
+                                  child: Text("My Randomly Generated Table"),
+                                ),
+                                columnSpacing: 15,
+                                horizontalMargin: 60,
+                                rowsPerPage: 5,
+                                columns: [
+                                  DataColumn(label: Text('DATE')),
+                                  DataColumn(label: Text('MEMBERS ')),
+                                  DataColumn(label: Text('ACTIVITY TYPE ')),
+                                  DataColumn(
+                                      label: Text('ACTIVITY DESCRIPTION')),
+                                  DataColumn(label: Text('IMAGE')),
+                                  DataColumn(label: Text('CHECKBOX')),
+                                  DataColumn(label: Text('POPUP-MENU')),
+                                ],
+                                source: MyData(a: data1!)),
+                          )
                           // ],
                           // SingleChildScrollView(
                           //   child: Container(
