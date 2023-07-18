@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:js';
 import 'dart:math';
 import 'package:flutter_colivhq_dummy/pop_up.dart';
 import 'package:http/http.dart' as http;
@@ -39,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late ActivityListModel? data1;
   bool circular = true;
   var token =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE0ZWI4YTNiNjgzN2Y2MTU4ZWViNjA3NmU2YThjNDI4YTVmNjJhN2IiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRXVnZW5pbyBGZXJyYW50ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaWlUM2ZRRU9sdUdxdnBNQ0REZ2w5V0xrN2ltckliOTdJZmg3SkxTN0V5dkt1UTJGQ0l0RkxRUjE1R1JHUXVnN2h0Nll0d2FfWWJJRHZEd0x4eXgwbGh2RVRzT3g5NmhkOUZUV1pRTnZRRFIteHYxM3ZuZHVRMXNweGRwampwWVJGdkdhUUgwLWtVTGQteXhLeTFFaEdNdVdVZjZNa2ZjcUJzRFJSUzU0V1oyZEdWeERMUXkzem5YdmZONnQ5SGc3VXdmVlZtVU1OYXI0M1lPaDdaZWJPVFUtTDFUVzlSZjc0aEZlcU0xUFh3dE92OU5uakkyaFR2SkR1RU9SWTdGOENvUEpwVS1jNE5Kd19Qd3Zyc0tjOGpqOWNxbFRNU0lnTHU2QnFMd0NTV1ZWbkRNZFhaVFNMWVlreC01NXJXdnhiZENJXzNiM0Y3WUJxcXhDNmxmLWNzQTBVcWg1ZmdMYkpFSWhsNERGanMzVlpyc3lSVENsbGp4ZlBiRUtqNDkxUU94ZkRjbUl0QUUwT2FzRFdtSzNVYlh5M1o3U2NyT1dIVlNIOEVjX1JZbjhPZ0toT1hOTmhPUE5Ldm1NbVZnWjFIVXhadS0tNDhpem80eDExWU1rMld4eExUZGdJbDVmWHM2X0FIajdYaTBFRW1CeV9QR2p0TmxDQUJJZzBXbjgwQkdsTDBzNFJZaW9KZV9XbVo1MGRZUGZJOGZnS1B6b1N5MWhMM3A0YzZHR0tzZU1KekxSOEpXZGlUbklWZGFLMXowSGpyRl8xMkI1Vi1UN1lJeHVqQUpKQVBpbjRxNDZ4X1JLUm5lc1lVWjRzUG92cWJReXE5NXJla1FxUVcyZEo0eGFOWXpoUVRpWktRQUZBX1dQV2hPU09SMDhWa2ZEYk1TTlFNS0JJa2FCREdjUWdkUWRTUksxMkxfS2FrdHpvLWtvLTFobEcxMGlXMmdXOU5yVmo5SEdyd3dUaEkyX3lOZzN3YUljMTZfWkJsQmJGdWdCZHhNUmg3NlFsZ0gwUjJmQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb2xpdmhxLWRldiIsImF1ZCI6ImNvbGl2aHEtZGV2IiwiYXV0aF90aW1lIjoxNjg5MDczMDk0LCJ1c2VyX2lkIjoiNWY4VXYzRGtTdlN6aTZmbHZUSTBMU3JjdTgwMiIsInN1YiI6IjVmOFV2M0RrU3ZTemk2Zmx2VEkwTFNyY3U4MDIiLCJpYXQiOjE2ODk1OTYzMjksImV4cCI6MTY4OTU5OTkyOSwiZW1haWwiOiJldWdlbmlvQGNhc2FtaWEuY28iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzcwMDI4ODEyODA1NjM5ODAwMyJdLCJlbWFpbCI6WyJldWdlbmlvQGNhc2FtaWEuY28iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.ef4c9ggX-hK3bMmJ3jyUSgvd7kn9ZglLu9fkPAwSaSn2d6imje5PKTXSNkbv9RTowhSoQx7TmdzuqiXiPyKcLjDVCmiKRjXffNXSmuye2TNaGwL7EZnS_oEslU2zcczvInoIlYitAS9-jIGnqZD1ddSF9Xy2mRHiZjljae-l1t_HkY0uIo1AsXUXy0Pk7uX1Re8bXc5Ss2KINfobWNofqJ0JQ76Pdic9D9opzETfbY5pWdHgVp5OsoTZcEnlcnIDp68WMFyqqW0bQyo6BCmQjfIaqF33MFVB7ysFYELM77_xRnOsUiDmcoCd8KGerKt6QEO5m1fxd7n-Y8P8R6OcCA';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE0ZWI4YTNiNjgzN2Y2MTU4ZWViNjA3NmU2YThjNDI4YTVmNjJhN2IiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRXVnZW5pbyBGZXJyYW50ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaWlUM2ZRRU9sdUdxdnBNQ0REZ2w5V0xrN2ltckliOTdJZmg3SkxTN0V5dkt1UTJGQ0l0RkxRUjE1R1JHUXVnN2h0Nll0d2FfWWJJRHZEd0x4eXgwbGh2RVRzT3g5NmhkOUZUV1pRTnZRRFIteHYxM3ZuZHVRMXNweGRwampwWVJGdkdhUUgwLWtVTGQteXhLeTFFaEdNdVdVZjZNa2ZjcUJzRFJSUzU0V1oyZEdWeERMUXkzem5YdmZONnQ5SGc3VXdmVlZtVU1OYXI0M1lPaDdaZWJPVFUtTDFUVzlSZjc0aEZlcU0xUFh3dE92OU5uakkyaFR2SkR1RU9SWTdGOENvUEpwVS1jNE5Kd19Qd3Zyc0tjOGpqOWNxbFRNU0lnTHU2QnFMd0NTV1ZWbkRNZFhaVFNMWVlreC01NXJXdnhiZENJXzNiM0Y3WUJxcXhDNmxmLWNzQTBVcWg1ZmdMYkpFSWhsNERGanMzVlpyc3lSVENsbGp4ZlBiRUtqNDkxUU94ZkRjbUl0QUUwT2FzRFdtSzNVYlh5M1o3U2NyT1dIVlNIOEVjX1JZbjhPZ0toT1hOTmhPUE5Ldm1NbVZnWjFIVXhadS0tNDhpem80eDExWU1rMld4eExUZGdJbDVmWHM2X0FIajdYaTBFRW1CeV9QR2p0TmxDQUJJZzBXbjgwQkdsTDBzNFJZaW9KZV9XbVo1MGRZUGZJOGZnS1B6b1N5MWhMM3A0YzZHR0tzZU1KekxSOEpXZGlUbklWZGFLMXowSGpyRl8xMkI1Vi1UN1lJeHVqQUpKQVBpbjRxNDZ4X1JLUm5lc1lVWjRzUG92cWJReXE5NXJla1FxUVcyZEo0eGFOWXpoUVRpWktRQUZBX1dQV2hPU09SMDhWa2ZEYk1TTlFNS0JJa2FCREdjUWdkUWRTUksxMkxfS2FrdHpvLWtvLTFobEcxMGlXMmdXOU5yVmo5SEdyd3dUaEkyX3lOZzN3YUljMTZfWkJsQmJGdWdCZHhNUmg3NlFsZ0gwUjJmQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb2xpdmhxLWRldiIsImF1ZCI6ImNvbGl2aHEtZGV2IiwiYXV0aF90aW1lIjoxNjg5MDczMDk0LCJ1c2VyX2lkIjoiNWY4VXYzRGtTdlN6aTZmbHZUSTBMU3JjdTgwMiIsInN1YiI6IjVmOFV2M0RrU3ZTemk2Zmx2VEkwTFNyY3U4MDIiLCJpYXQiOjE2ODk2NzEzNDksImV4cCI6MTY4OTY3NDk0OSwiZW1haWwiOiJldWdlbmlvQGNhc2FtaWEuY28iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzcwMDI4ODEyODA1NjM5ODAwMyJdLCJlbWFpbCI6WyJldWdlbmlvQGNhc2FtaWEuY28iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TTULKZiGEBDvSE1kMoar8hI215MlkND2HIBkvcvmdWj9_ZDSF75X9Asdz30H2kJKmO-w00x1sSWyxLQirhKTKD4eYjk2Kf3FdKScz1WMy6zm_ydk_zDD6_ekiNaBKbjQj_PSO9RWLhcVy-YqhTR_Q8Y--iTWevsTGzjWFY8GxPIY3Gg5lAYEFnEU09hyivqBWA8WmEscc1DtH6C6v-JNmxS2fPNOiMe953Z-9Ghre8wmyHm0BbRSpAtJwLPwDeGbtKiDobuSeg2zqkn_qvyNC4N1HrcyIWLwmwfBoj94ny5A6NtGszNyQfLbWIDS0qGalrY6C_Pq4kE0MB0mTRn-Cg';
 
 // method for post data
   postData() async {
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          //shadowColor: Color(000000),
+          //shadowColor: Color(000000),x
           elevation: 20,
           toolbarHeight: 40,
           shadowColor: Colors.black,
@@ -340,37 +341,28 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: 800,
               child: SingleChildScrollView(
+                //  scrollDirection: Axis.horizontal,
                 child: circular
                     ? CircularProgressIndicator()
                     : Column(
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MyPopUpPage()),
-                              );
-                            },
-                            child: PaginatedDataTable(
-                                header: Center(
-                                  child: Text("My Randomly Generated Table"),
-                                ),
-                                columnSpacing: 15,
-                                horizontalMargin: 60,
-                                rowsPerPage: 5,
-                                columns: [
-                                  DataColumn(label: Text('DATE')),
-                                  DataColumn(label: Text('MEMBERS ')),
-                                  DataColumn(label: Text('ACTIVITY TYPE ')),
-                                  DataColumn(
-                                      label: Text('ACTIVITY DESCRIPTION')),
-                                  DataColumn(label: Text('IMAGE')),
-                                  DataColumn(label: Text('CHECKBOX')),
-                                  DataColumn(label: Text('POPUP-MENU')),
-                                ],
-                                source: MyData(a: data1!)),
-                          )
+                          PaginatedDataTable(
+                              header: Center(
+                                child: Text("My Randomly Generated Table"),
+                              ),
+                              columnSpacing: 15,
+                              horizontalMargin: 60,
+                              rowsPerPage: 5,
+                              columns: const [
+                                DataColumn(label: Text('DATE')),
+                                DataColumn(label: Text('MEMBERS ')),
+                                DataColumn(label: Text('ACTIVITY TYPE ')),
+                                DataColumn(label: Text('ACTIVITY DESCRIPTION')),
+                                DataColumn(label: Text('IMAGE')),
+                                DataColumn(label: Text('CHECKBOX')),
+                                DataColumn(label: Text('POPUP-MENU')),
+                              ],
+                              source: MyData(a: data1!, b: context))
                           // ],
                           // SingleChildScrollView(
                           //   child: Container(
@@ -488,11 +480,13 @@ class _MyHomePageState extends State<MyHomePage> {
 enum SampleItem { itemOne, itemTwo, itemThree }
 
 class MyData extends DataTableSource {
+  bool isSelected = false;
   ValueNotifier<List<bool>> isCheckedList =
       ValueNotifier<List<bool>>(List<bool>.filled(100, false));
   ActivityListModel a;
+  BuildContext b;
   late List<Map<String, dynamic>> data;
-  MyData({required this.a}) {
+  MyData({required this.a, required this.b}) {
     data = List.generate(
         a.data.length,
         (index) => {
@@ -526,48 +520,72 @@ class MyData extends DataTableSource {
   SampleItem? selectedMenu;
   @override
   DataRow? getRow(int index) {
-    return DataRow(cells: [
-      DataCell(Column(
-        children: [
-          Text(data[index]['todo-date'].toString()),
-          Text(data[index]['todo-time'].toString())
-        ],
-      )),
-      DataCell(Text(data[index]['name'])),
-      DataCell(Text(data[index]['activity-type'])),
-      DataCell(Text(data[index]['activity-description'].toString())),
-      DataCell(CircleAvatar(
-          backgroundImage: NetworkImage(data[index]['owner-image']))),
-      DataCell(
-        ValueListenableBuilder<List<bool>>(
-          valueListenable: isCheckedList,
-          builder: (context, value, child) {
-            return Checkbox(
-              value: value[index],
-              onChanged: (bool? newValue) {
-                // print('Check Detected');
-
-                value[index] = newValue!;
-                isCheckedList.value = value;
-                notifyListeners();
-              },
-            );
-          },
-        ),
-      ),
-      DataCell(PopupMenuButton<SampleItem>(
-        initialValue: selectedMenu,
-        onSelected: (SampleItem item) {},
-        itemBuilder: (BuildContext context) {
-          return <PopupMenuEntry<SampleItem>>[
-            const PopupMenuItem<SampleItem>(
-              value: SampleItem.itemOne,
-              child: Text('Item 1'),
-            ),
-          ];
+    return DataRow(
+        // onLongPress: () {
+        //   builder:
+        //   (context, child) {
+        //     return GestureDetector(
+        //       onTap: () {
+        //         Navigator.push(context,
+        //             MaterialPageRoute(builder: (context) => MyPopUpPage()));
+        //       },
+        //     );
+        //   };
+        // },
+        onSelectChanged: (value) {
+          showDialog(
+              context: b,
+              builder: (BuildContext context) {
+                return Align(
+                    alignment: Alignment.bottomRight,
+                    child: FractionallySizedBox(
+                        heightFactor: 0.94,
+                        widthFactor: 0.4,
+                        child: MyPopUpPage()));
+              });
         },
-      ))
-    ]);
+        cells: [
+          DataCell(Column(
+            children: [
+              Text(data[index]['todo-date'].toString()),
+              Text(data[index]['todo-time'].toString())
+            ],
+          )),
+          DataCell(Text(data[index]['name'])),
+          DataCell(Text(data[index]['activity-type'])),
+          DataCell(Text(data[index]['activity-description'].toString())),
+          DataCell(CircleAvatar(
+              backgroundImage: NetworkImage(data[index]['owner-image']))),
+          DataCell(
+            ValueListenableBuilder<List<bool>>(
+              valueListenable: isCheckedList,
+              builder: (context, value, child) {
+                return Checkbox(
+                  value: value[index],
+                  onChanged: (bool? newValue) {
+                    // print('Check Detected');
+
+                    value[index] = newValue!;
+                    isCheckedList.value = value;
+                    notifyListeners();
+                  },
+                );
+              },
+            ),
+          ),
+          DataCell(PopupMenuButton<SampleItem>(
+            initialValue: selectedMenu,
+            onSelected: (SampleItem item) {},
+            itemBuilder: (BuildContext context) {
+              return <PopupMenuEntry<SampleItem>>[
+                const PopupMenuItem<SampleItem>(
+                  value: SampleItem.itemOne,
+                  child: Text('Item 1'),
+                ),
+              ];
+            },
+          ))
+        ]);
   }
 
   @override
